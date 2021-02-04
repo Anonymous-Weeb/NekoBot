@@ -23,7 +23,7 @@ from Mizuhararobot.modules.helper_funcs.alternate import typing_action
 
 PM_START_TEXT = """
 Hi {}, my name is {}! 
-I am vanilla a group manager bot.
+I am vanilla a kawaii neko which can manage your group.
 You can find my list of available commands with /help.
 """
 
@@ -150,16 +150,16 @@ def start(update, context):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="➕️Add mizuhara to your group",
+                            text="➕️Add Vanilla to your group",
                             url="t.me/{}?startgroup=true".format(context.bot.username))
                     ],
                     [
                         InlineKeyboardButton(
                             text="Support Chat ",
-                            url="https://t.me/chizurusupport"),
+                            url="https://t.me/NekoBot_Support"),
                         InlineKeyboardButton(
                             text="📍Updates ",
-                            url="https://t.me/chizuruupdates")
+                            url="https://t.me/NekoBot_Support")
                     ],
                     [
                         InlineKeyboardButton(
