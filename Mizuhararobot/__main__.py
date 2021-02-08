@@ -28,7 +28,7 @@ You can find my list of available commands with /help.
 """
 
 
-BOT_IMG = "https://telegra.ph/file/08b4b0ca3d682f3845ec2.jpg"
+BOT_IMG = "https://telegra.ph/file/08b4b0ca3d682f3845ec2.png"
 
 
 
@@ -163,15 +163,15 @@ def start(update, context):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="help",
-                            url="https://t.me/Chizurumanagementbot?start=help")
+                            text="My Master",
+                            url="https://t.me/Hum0ur_being")
                     ]]))
 
 
 
 
     else:
-        update.effective_message.reply_text("Heya, my name is mizuhara")
+        update.effective_message.reply_text("Heya, my name is vanilla")
 
 
 
