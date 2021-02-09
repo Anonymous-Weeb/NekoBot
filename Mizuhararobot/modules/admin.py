@@ -44,14 +44,14 @@ def promote(update: Update, context: CallbackContext) -> str:
         not (promoter.can_promote_members or promoter.status == "creator")
         and not user.id in DRAGONS
     ):
-        message.reply_text("You don't have the necessary rights to do that!")
+        message.reply_text("You don't have the necessary rights to do that nyaa~~!")
         return
 
     user_id = extract_user(message, args)
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect check it and then try.."
+            "You don't seem to be referring to a user or the ID specified is incorrect check it and then try it nyan~~.."
         )
         return
 
@@ -61,11 +61,11 @@ def promote(update: Update, context: CallbackContext) -> str:
         return
 
     if user_member.status == "administrator" or user_member.status == "creator":
-        message.reply_text("How am I meant to promote someone that's already an admin?")
+        message.reply_text("How am I meant to promote someone that's already an admin baka")
         return
 
     if user_id == bot.id:
-        message.reply_text("How can I promote myself! Get an admin to do it for me.")
+        message.reply_text("How can I promote myself baka ! Get an admin to do it for me nyan~.")
         return
 
     # set same perms as bot - bot can't assign higher perms than itself!
@@ -86,7 +86,7 @@ def promote(update: Update, context: CallbackContext) -> str:
         )
     except BadRequest as err:
         if err.message == "User_not_mutual_contact":
-            message.reply_text("I can't promote someone who isn't in the group.")
+            message.reply_text(" Aho Ka?I can't promote someone who isn't in the group.")
         else:
             message.reply_text("An error occured while promoting.")
         return
@@ -134,15 +134,15 @@ def demote(update: Update, context: CallbackContext) -> str:
         return
 
     if user_member.status == "creator":
-        message.reply_text("This person CREATED the chat, how would I demote them?")
+        message.reply_text("This person CREATED the chat, how would I demote them nyan~~?")
         return
 
     if not user_member.status == "administrator":
-        message.reply_text("This user is not an admin how can i demote!")
+        message.reply_text("This user is not an admin how can i demote baka!")
         return
 
     if user_id == bot.id:
-        message.reply_text("How can I demote myself! Get an admin to do it for me.")
+        message.reply_text("How can I demote myself baka! Get an admin to do it for me nyan~~.")
         return
 
     try:
@@ -175,8 +175,8 @@ def demote(update: Update, context: CallbackContext) -> str:
         return log_message
     except BadRequest:
         message.reply_text(
-            "Could not demote. I might not be admin, or the admin status was appointed by another"
-            " user, so I can't act upon them!"
+            "Could not demote nyan ~. I might not be admin, or the admin status was appointed by another"
+            " user, so I can't act upon them nyan~!"
         )
         return
 
@@ -189,7 +189,7 @@ def refresh_admin(update, _):
     except KeyError:
         pass
 
-    update.effective_message.reply_text("Admins cache refreshed!")
+    update.effective_message.reply_text("Admins cache refreshed nyan~!")
 
 
 @run_async
@@ -212,7 +212,7 @@ def set_title(update: Update, context: CallbackContext):
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            " Double check ID baka nyan ~~"
         )
         return
 
@@ -230,12 +230,12 @@ def set_title(update: Update, context: CallbackContext):
 
     if user_id == bot.id:
         message.reply_text(
-            "I can't set my own title myself! Get the one who made me admin to do it for me."
+            "I can't set my own title myself! Get the one who made me admin to do it for me nyan~~."
         )
         return
 
     if not title:
-        message.reply_text("Setting blank title doesn't do anything!")
+        message.reply_text("Setting blank title doesn't do anything don't joke around nyan~~!")
         return
 
     if len(title) > 16:
@@ -247,7 +247,7 @@ def set_title(update: Update, context: CallbackContext):
         bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
     except BadRequest:
         message.reply_text(
-            "I can't set custom title for admins that were not promoted by me!"
+            "I can't set custom title for admins that were not promoted by me(=ㅇ༝ㅇ=)!"
         )
         return
 
@@ -345,11 +345,11 @@ def invite(update: Update, context: CallbackContext):
             update.effective_message.reply_text(invitelink)
         else:
             update.effective_message.reply_text(
-                "I don't have access to the invite link, try changing my permissions!"
+                "I don't have access to the invite link, try changing my permissions nyan ~!"
             )
     else:
         update.effective_message.reply_text(
-            "I can only give you invite links for supergroups and channels, sorry!"
+            "I can only give you invite links for supergroups and channels nyan ~~!"
         )
 
 
@@ -371,11 +371,11 @@ def adminlist(update, context):
 
     try:
         msg = update.effective_message.reply_text(
-            "Fetching group admins...", parse_mode=ParseMode.HTML
+            "Fetching group admins nyan~~...", parse_mode=ParseMode.HTML
         )
     except BadRequest:
         msg = update.effective_message.reply_text(
-            "Fetching group admins...", quote=False, parse_mode=ParseMode.HTML
+            "Fetching group admins nyan~~...", quote=False, parse_mode=ParseMode.HTML
         )
 
     administrators = bot.getChatAdministrators(chat_id)
@@ -468,7 +468,7 @@ def adminlist(update, context):
 
 
 __help__ = """
- • `/admins`*:* list of admins in the chat
+ • `/admins`*:* list of admins in the chat nyan~~
 
 *Admins only:*
  • `/pin`*:* silently pins the message replied to - add `'loud'` or `'notify'` to give notifs to users
@@ -480,8 +480,8 @@ __help__ = """
  • `/admincache`*:* force refresh the admins list
 
 Example:
-Sometimes, you promote or demote an admin manually, and Mizuhara doesn't realise it immediately. This is because to avoid spamming telegram servers, admin status is cached locally.
-This means that you sometimes have to wait a few minutes for admin rights to update. If you want to update them immediately, you can use the /admincache command; that'll force Mizuhara to check who the admins are again.
+Sometimes, you promote or demote an admin manually, and Nekobot doesn't realise it immediately. This is because to avoid spamming telegram servers, admin status is cached locally.
+This means that you sometimes have to wait a few minutes for admin rights to update. If you want to update them immediately, you can use the /admincache command; that'll force Nekobot to check who the admins are again.
 """
 
 ADMINLIST_HANDLER = DisableAbleCommandHandler("admins", adminlist)
