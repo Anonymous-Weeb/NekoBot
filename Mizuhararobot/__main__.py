@@ -23,12 +23,12 @@ from Mizuhararobot.modules.helper_funcs.alternate import typing_action
 
 PM_START_TEXT = """
 Hi {}, my name is {}! 
-I am vanilla a kawaii neko which can manage your group.
+I am a kawaii neko which can manage your group nyan~.
 You can find my list of available commands with /help.
 """
 
 
-BOT_IMG = "https://telegra.ph/file/08b4b0ca3d682f3845ec2.png"
+BOT_IMG = "https://telegra.ph/Neko-Bot-02-09-2"
 
 
 
@@ -150,20 +150,20 @@ def start(update, context):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="➕️Add Vanilla to your group",
+                            text="Add NekoBot To Your Group",
                             url="t.me/{}?startgroup=true".format(context.bot.username))
                     ],
                     [
                         InlineKeyboardButton(
-                            text="Support Chat ",
+                            text="Support Chat📩 ",
                             url="https://t.me/NekoBot_Support"),
                         InlineKeyboardButton(
-                            text="📍Updates ",
+                            text="⚒Updates ",
                             url="https://t.me/NekoBot_Support")
                     ],
                     [
                         InlineKeyboardButton(
-                            text="My Master",
+                            text="My Master👨‍💻",
                             url="https://t.me/Hum0ur_being")
                     ]]))
 
@@ -171,7 +171,7 @@ def start(update, context):
 
 
     else:
-        update.effective_message.reply_text("Heya, my name is vanilla")
+        update.effective_message.reply_text("I am Neko bot call me vanilaa nyan~")
 
 
 
@@ -281,7 +281,7 @@ def get_help(update, context):
     if chat.type != chat.PRIVATE:
 
         update.effective_message.reply_text(
-            "Click the button below to get help manu in your pm.",
+            "Click the button below to get help menu nyan~.",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -333,7 +333,7 @@ def gethelp(update, context):
                     ),
                 )
         query.message.edit_text(
-            text="I have sent you the requested information in a private message.", 
+            text="I have sent you the requested information in a private message nyan~.", 
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -465,7 +465,7 @@ def get_settings(update: Update, context: CallbackContext):
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
         if is_user_admin(chat, user.id):
-            text = "Click here to get this chat's settings, as well as yours."
+            text = "Click here to get this chat's settings, as well as yours nyan~."
             msg.reply_text(
                 text,
                 reply_markup=InlineKeyboardMarkup([[
@@ -475,7 +475,7 @@ def get_settings(update: Update, context: CallbackContext):
                             context.bot.username, chat.id))
                 ]]))
         else:
-            text = "Click here to check your settings."
+            text = "Click here to check your settings nyan~."
 
     else:
         send_settings(chat.id, user.id, True)
@@ -508,11 +508,11 @@ def donate(update: Update, context: CallbackContext):
             )
 
             update.effective_message.reply_text(
-                "I've PM'ed you about donating to my creator!"
+                "I've PM'ed you about donating to my creator!nyan~~"
             )
         except Unauthorized:
             update.effective_message.reply_text(
-                "Contact me in PM first to get donation information."
+                "Contact me in PM first to get donation information nyan~."
             )
 
 
@@ -540,7 +540,7 @@ def is_chat_allowed(update, context):
         chat_id = update.effective_message.chat_id
         if chat_id not in WHITELIST_CHATS:
             context.bot.send_message(
-                chat_id=update.message.chat_id, text="Unallowed chat! Leaving..."
+                chat_id=update.message.chat_id, text="Unallowed chat! Leaving nyan~~ヽ(`д´；)/..."
             )
             try:
                 context.bot.leave_chat(chat_id)
