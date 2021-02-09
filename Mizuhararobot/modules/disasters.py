@@ -46,7 +46,7 @@ def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
 # do not async, not a handler
 # def send_disasters(update):
 #    update.effective_message.reply_text(
-#        disasters, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
+#        disasters, parse_mode=helpers.util.escape_markdown, disable_web_page_preview=True)
 
 ### Deep link example ends
 
