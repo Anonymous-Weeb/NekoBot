@@ -171,7 +171,7 @@ def start(update, context):
 
 
     else:
-        update.effective_message.reply_text("I am Neko bot call me vanilaa nyan~")
+        update.effective_message.reply_text("I am Nekobot call me vanilla nyan~")
 
 
 
