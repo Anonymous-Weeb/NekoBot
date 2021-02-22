@@ -27,18 +27,18 @@ def approval(update, context):
     args = context.args 
     user_id, reason = extract_user_and_text(message, args)
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("You don't seem to be referring to a user nyan~~.")
         return 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            message.reply_text("I can't seem to find this user")
+            message.reply_text("I can't seem to find this user nyan~~")
             return 
         else:
             raise
     if user_id == context.bot.id:
-        message.reply_text("How I supposed to approve myself")
+        message.reply_text("How I supposed to approve myselfnyan~~")
         return 
     
     chat_id = str(chat.id)[1:] 
@@ -46,14 +46,14 @@ def approval(update, context):
     target_user = mention_html(member.user.id, member.user.first_name)
     if target_user in approve_list:
         message.reply_text(
-            "{} is an approved user. Auto Warns, antiflood, and blocklists won't apply to them.".format(mention_html(member.user.id, member.user.first_name)),                                              
+            "{} is an approved user. Auto Warns, antiflood, and blocklists won't apply to them nyan~~.".format(mention_html(member.user.id, member.user.first_name)),                                              
             parse_mode=ParseMode.HTML
         )
         return
 
     if target_user not in approve_list:
         message.reply_text(
-            "{} is not an approved user. They are affected by normal commands.".format(mention_html(member.user.id, member.user.first_name)),                                              
+            "{} is not an approved user. They are affected by normal commands nyan~~.".format(mention_html(member.user.id, member.user.first_name)),                                              
             parse_mode=ParseMode.HTML
         )
         return
@@ -71,18 +71,18 @@ def approve(update, context):
     args = context.args 
     user_id, reason = extract_user_and_text(message, args)
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("You don't seem to be referring to a user nyan~~.")
         return 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            message.reply_text("I can't seem to find this user")
+            message.reply_text("I can't seem to find this user nyan~~")
             return 
         else:
             raise
     if user_id == context.bot.id:
-        message.reply_text("How I supposed to approve myself")
+        message.reply_text("How I supposed to approve myself nyan~~")
         return 
     
     chat_id = str(chat.id)[1:] 
@@ -90,7 +90,7 @@ def approve(update, context):
     target_user = mention_html(member.user.id, member.user.first_name)
     if target_user in approve_list:
         message.reply_text(
-            "{} is already approved in {}.".format(mention_html(member.user.id, member.user.first_name),
+            "{} is already approved in {} nyan~~.".format(mention_html(member.user.id, member.user.first_name),
                                                            chat.title),
             parse_mode=ParseMode.HTML
         )
@@ -99,7 +99,7 @@ def approve(update, context):
     chat_id = str(chat.id)[1:]
     REDIS.sadd(f'approve_list_{chat_id}', mention_html(member.user.id, member.user.first_name))
     message.reply_text(
-        "{} has been approved in {}.".format(mention_html(member.user.id, member.user.first_name),
+        "{} has been approved in {} nyan~~.".format(mention_html(member.user.id, member.user.first_name),
                                                                      chat.title),
         parse_mode=ParseMode.HTML)
 
@@ -116,25 +116,25 @@ def unapprove(update, context):
     args = context.args 
     user_id, reason = extract_user_and_text(message, args)
     if not user_id:
-        message.reply_text("You don't seem to be referring to a user.")
+        message.reply_text("You don't seem to be referring to a user nyan~~.")
         return 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            message.reply_text("I can't seem to find this user")
+            message.reply_text("I can't seem to find this user nyan~~")
             return 
         else:
             raise
     if user_id == context.bot.id:
-        message.reply_text("how I supposed to approve or unapprove myself")
+        message.reply_text("how I supposed to approve or unapprove myself nyan ~~")
         return 
     chat_id = str(chat.id)[1:] 
     approve_list = list(REDIS.sunion(f'approve_list_{chat_id}'))
     target_user = mention_html(member.user.id, member.user.first_name)
     if target_user not in approve_list:
         message.reply_text(
-            "{} isn't approved yet.".format(mention_html(member.user.id, member.user.first_name)),
+            "{} isn't approved yet nyan~~.".format(mention_html(member.user.id, member.user.first_name)),
             parse_mode=ParseMode.HTML
         )
         return
@@ -142,7 +142,7 @@ def unapprove(update, context):
     chat_id = str(chat.id)[1:]
     REDIS.srem(f'approve_list_{chat_id}', mention_html(member.user.id, member.user.first_name))
     message.reply_text(
-        "{} is no longer approved in {}.".format(mention_html(member.user.id, member.user.first_name),
+        "{} is no longer approved in {} nyan~~.".format(mention_html(member.user.id, member.user.first_name),
                                                                      chat.title),
         parse_mode=ParseMode.HTML
     )
@@ -186,7 +186,7 @@ def unapproveall(update, context):
     for target_user in approve_list:
         REDIS.srem(f'approve_list_{chat_id}', target_user)
     message.reply_text(
-        "Successully unapproved all users from {}.".format(chat.title)
+        "Successully unapproved all users from {} nyan~~.".format(chat.title)
     )
         
 __mod_name__ = "Approval"    
@@ -195,7 +195,7 @@ __help__ = """
 \
 Sometimes, you might trust a user not to send unwanted content.
 Maybe not enough to make them admin, but you might be ok with auto warns, blacklists, and antiflood not applying to them.
-That's what approvals are for - approve of trustworthy users to allow them to send 
+That's what approvals are for - approve of trustworthy users to allow them to send nyan ~~
 Admin commands:
 - /approval: Check a user's approval status in this chat.
 Admin commands:
