@@ -23,24 +23,24 @@ from telegram.utils.helpers import mention_html
 
 def check_user(user_id: int, bot: Bot, chat: Chat) -> Optional[str]:
     if not user_id:
-        reply = "You don't seem to be referring to a user or the ID specified is incorrect.."
+        reply = "You don't seem to be referring to a user or the ID specified is incorrect nyan~~"
         return reply
 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            reply = "I can't seem to find this user"
+            reply = "I can't seem to find this user nyan~~"
             return reply
         else:
             raise
 
     if user_id == bot.id:
-        reply = "I'm not gonna MUTE myself, How high are you?"
+        reply = "Aho ka teme? I'm not gonna MUTE myself"
         return reply
 
     if is_user_admin(chat, user_id, member) or user_id in TIGERS:
-        reply = "Can't. Find someone else to mute but not this one."
+        reply = "Can't. He is oneof the chosen one nyan~~"
         return reply
 
     return None
@@ -89,7 +89,7 @@ def mute(update: Update, context: CallbackContext) -> str:
         return log
 
     else:
-        message.reply_text("This user is already muted!")
+        message.reply_text("This user is already mutedstop disturbing everyone nyan~~")
 
     return ""
 
@@ -113,7 +113,7 @@ def smute(update: Update, context: CallbackContext) -> str:
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
-        if excp.message == "User not found":
+        if excp.message == "User not found LOL":
             return ""
         else:
             raise
@@ -157,7 +157,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "You'll need to either give me a username to unmute, or reply to someone to be unmuted."
+            "You'll need to either give me a username to unmute, or reply to someone to be unmuted nyan~~"
         )
         return ""
 
@@ -170,7 +170,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
             and member.can_send_other_messages
             and member.can_add_web_page_previews
         ):
-            message.reply_text("This user already has the right to speak.")
+            message.reply_text("This user already has the right to speak stop playing around nyan~~")
         else:
             chat_permissions = ChatPermissions(
                 can_send_messages=True,
@@ -188,7 +188,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
                 pass
             bot.sendMessage(
                 chat.id,
-                f"I shall allow <b>{html.escape(member.user.first_name)}</b> to text!",
+                f"I shall allow <b>{html.escape(member.user.first_name)}</b> to text nyan~~!",
                 parse_mode=ParseMode.HTML,
             )
             return (
@@ -200,7 +200,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
     else:
         message.reply_text(
             "This user isn't even in the chat, unmuting them won't make them talk more than they "
-            "already do!"
+            "already do bakayaro!"
         )
 
     return ""
@@ -228,7 +228,7 @@ def temp_mute(update: Update, context: CallbackContext) -> str:
     member = chat.get_member(user_id)
 
     if not reason:
-        message.reply_text("You haven't specified a time to mute this user for!")
+        message.reply_text("You haven't specified a time to mute this user for nyan~~!")
         return ""
 
     split_reason = reason.split(None, 1)
@@ -267,23 +267,23 @@ def temp_mute(update: Update, context: CallbackContext) -> str:
             )
             return log
         else:
-            message.reply_text("This user is already muted.")
+            message.reply_text("This user is already muted stop playing around nyan~~.")
 
     except BadRequest as excp:
-        if excp.message == "Reply message not found":
+        if excp.message == "Reply message not found sed":
             # Do not reply
             message.reply_text(f"Muted for {time_val}!", quote=False)
             return log
         else:
             LOGGER.warning(update)
             LOGGER.exception(
-                "ERROR muting user %s in chat %s (%s) due to %s",
+                "ERROR muting user %s in chat %s (%s) due to %s *sleeps back*",
                 user_id,
                 chat.title,
                 chat.id,
                 excp.message,
             )
-            message.reply_text("Well damn, I can't mute that user.")
+            message.reply_text("Well damn, I can't mute that user sed lyf it iz.")
 
     return ""
 
