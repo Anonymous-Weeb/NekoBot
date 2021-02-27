@@ -4,9 +4,9 @@
 
 A Telegram Python bot running on python3 forked with saitama with a sqlalchemy database. Weeb or not neko will be fun and good management for you in your groups.
 
-Can be found on telegram as [Mizuhara robot](https://t.me/Yourweeb_bot).
+Can be found on telegram as [Neko Bot](https://t.me/YourWeeb_bot).
 
-The Support group can be reached out to at [chizuru support](https://t.me/chizurusupport), where you can ask for help , discover new features, report bugs, and stay in the loop whenever a new update is available. 
+The Support group can be reached out to at [NekoBot Support](https://t.me/NekoBot_Support), where you can ask for help , discover new features, report bugs, and stay in the loop whenever a new update is available. 
 
 
 News channel as at [Chizuru updates](https://t.me/chizuruupdates)
@@ -172,4 +172,4 @@ Also, missing proper credit for blacklistusers taken from TheRealPhoenixBot (wil
 
 Any other authorship/credits can be seen through the commits.
 
-Should any be missing kindly let us know at [Mizuhara Support](https://t.me/chizurusupport) or simply submit a pull request on the readme.
+Should any be missing kindly let us know at [Mizuhara Support](https://t.me/NekoBot_Support) or simply submit a pull request on the readme.
