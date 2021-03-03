@@ -163,8 +163,8 @@ def start(update, context):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="My Master👨‍💻",
-                            url="https://t.me/Hum0ur_being")
+                            text="🗃Source Code",
+                            url="https://github.com/minatouzuki/mizuharaRobotx")
                     ]]))
 
 
