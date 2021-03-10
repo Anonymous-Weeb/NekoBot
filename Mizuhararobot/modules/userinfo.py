@@ -176,7 +176,7 @@ async def group_info(event) -> None:
         ch_full = await event.client(GetFullChannelRequest(channel=entity))
     except:
         await event.reply(
-            "Can't for some reason, maybe it is a private one or that I am banned there."
+            "Can't for some reason, maybe it is a private one or that I am banned there nyan~~."
         )
         return
     msg = f"**ID**: `{entity.id}`"
@@ -233,14 +233,14 @@ def info(update: Update, context: CallbackContext):
             and not message.parse_entities([MessageEntity.TEXT_MENTION])
         )
     ):
-        message.reply_text("I can't extract a user from this.")
+        message.reply_text("I can't extract a user from this nyan~~.")
         return
 
     else:
         return
 
     rep = message.reply_text(
-        "<code>Accessing Rent list...</code>", parse_mode=ParseMode.HTML
+        "<code>Accessing the info nyan~~</code>", parse_mode=ParseMode.HTML
     )
 
     text = (
@@ -309,7 +309,7 @@ def info(update: Update, context: CallbackContext):
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/chizuruupdates/19">?</a>]'.format(bot.username)
+        text += ' [<a href="https://t.me/NekoBot_Updates/3">?</a>]'.format(bot.username)
 
     try:
         user_member = chat.get_member(user.id)
@@ -382,7 +382,7 @@ def about_me(update: Update, context: CallbackContext):
     elif message.reply_to_message:
         username = message.reply_to_message.from_user.first_name
         update.effective_message.reply_text(
-            f"{username} hasn't set an info message about themselves yet!"
+            f"{username} hasn't set an info message about themselves yet nyan~~"
         )
     else:
         update.effective_message.reply_text("There isnt one, use /setme to set one.")
@@ -407,14 +407,14 @@ def set_about_me(update: Update, context: CallbackContext):
         if len(info[1]) < MAX_MESSAGE_LENGTH // 4:
             sql.set_user_me_info(user_id, info[1])
             if user_id in [777000, 1087968824]:
-                message.reply_text("Authorized...Information updated!")
+                message.reply_text("Authorized...Information updated nyan~~")
             elif user_id == bot.id:
-                message.reply_text("I have updated my info with the one you provided!")
+                message.reply_text("I have updated my info with the one you provided nyan~~"
             else:
-                message.reply_text("Information updated!")
+                message.reply_text("Information updated nyan~")
         else:
             message.reply_text(
-                "The info needs to be under {} characters! You have {}.".format(
+                "The info needs to be under {} characters! You have {} nyan~~.".format(
                     MAX_MESSAGE_LENGTH // 4, len(info[1])
                 )
             )
@@ -463,7 +463,7 @@ def about_bio(update: Update, context: CallbackContext):
         )
     else:
         update.effective_message.reply_text(
-            "You haven't had a bio set about yourself yet!"
+            "You haven't had a bio set about yourself yet nyan~!"
         )
 
 
@@ -479,7 +479,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == message.from_user.id:
             message.reply_text(
-                "Ha, you can't set your own bio! You're at the mercy of others here..."
+                "Ha, you can't set your own bio! You're at the mercy of others here nyan~"
             )
             return
 
@@ -489,7 +489,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == bot.id and sender_id not in DEV_USERS:
             message.reply_text(
-                "Erm... yeah, I only trust Heroes Association to set my bio."
+                "Erm... yeah, I only trut my masteror his people to set my bio."
             )
             return
 
@@ -511,7 +511,7 @@ def set_about_bio(update: Update, context: CallbackContext):
                     )
                 )
     else:
-        message.reply_text("Reply to someone to set their bio!")
+        message.reply_text("Reply to someone to set their bio nyan~~!")
 
 
 def __user_info__(user_id):
@@ -549,7 +549,7 @@ Examples:
  • `/info`*:* get information about a user. 
  
 *What is that health thingy?*
- Come and see [HP System explained](https://t.me/chizuruupdates/21)
+ Come and see [HP System explained](https://t.me/NekoBot_Updates/4)
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio)
