@@ -9,7 +9,7 @@ Can be found on telegram as [Neko Bot](https://t.me/YourWeeb_bot).
 The Support group can be reached out to at [NekoBot Support](https://t.me/NekoBot_Support), where you can ask for help , discover new features, report bugs, and stay in the loop whenever a new update is available. 
 
 
-News channel as at [Chizuru updates](https://t.me/chizuruupdates)
+News channel as at [NekoBot Updates](https://t.me/NekoBot_Updates)
 
 ## How to setup/deploy.
 
@@ -162,7 +162,7 @@ You can use [nssm](https://nssm.cc/usage) to install the bot as service on windo
 Make sure to edit the start and restart bats to your needs. 
 Note: the restart bat requires that User account control be disabled.
 
-For queries or any issues regarding the bot please open an issue ticket or visit us at [Mizuhara Support](https://t.me/chizurusupport)
+For queries or any issues regarding the bot please open an issue ticket or visit us at [NekoBot support](https://t.me/NekoBot_Support)
 
 ## Credits
 The bot is based on the original work done by [PaulSonOfLars](https://github.com/PaulSonOfLars)
