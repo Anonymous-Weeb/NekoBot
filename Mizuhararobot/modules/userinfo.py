@@ -409,7 +409,7 @@ def set_about_me(update: Update, context: CallbackContext):
             if user_id in [777000, 1087968824]:
                 message.reply_text("Authorized...Information updated nyan~~")
             elif user_id == bot.id:
-                message.reply_text("I have updated my info with the one you provided nyan~~"
+                message.reply_text("I have updated my info with the one you provided nyan~~") 
             else:
                 message.reply_text("Information updated nyan~")
         else:
