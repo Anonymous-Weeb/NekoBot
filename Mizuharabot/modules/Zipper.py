@@ -1,9 +1,9 @@
 import zipfile
 import time
 import os
-from tg_bot.events import register
-from tg_bot import TEMP_DOWNLOAD_DIRECTORY
-from tg_bot import client
+from Mizuhararobot.events import register
+from Mizuhararobot import TEMP_DOWNLOAD_DIRECTORY
+from Mizuhararobot import client
 from telethon import types
 from telethon.tl import functions
 
