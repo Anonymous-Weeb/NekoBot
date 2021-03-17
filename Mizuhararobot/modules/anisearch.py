@@ -3,7 +3,7 @@ import html
 import bs4
 import requests
 from Mizuhararobot import dispatcher
-from tg_bot.modules.disable import DisableAbleCommandHandler
+from Mizuhararobot.modules.disable import DisableAbleCommandHandler
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update)
 from telegram.ext import (
     CallbackContext,
