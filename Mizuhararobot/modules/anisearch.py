@@ -2,7 +2,7 @@ import json
 import html
 import bs4
 import requests
-from tg_bot import dispatcher
+from Mizuhararobot import dispatcher
 from tg_bot.modules.disable import DisableAbleCommandHandler
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update)
 from telegram.ext import (
