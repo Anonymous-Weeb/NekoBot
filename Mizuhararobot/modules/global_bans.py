@@ -42,13 +42,13 @@ from telegram.utils.helpers import mention_html
 GBAN_ENFORCE_GROUP = 6
 
 GBAN_ERRORS = {
-    "User is an administrator of the chat",
-    "Chat not found",
-    "Not enough rights to restrict/unrestrict chat member",
+    "User is an administrator of the chat nyan~~",
+    "Chat not found nyan~~",
+    "Not enough rights to restrict/unrestrict chat member nyan~~",
     "User_not_participant",
     "Peer_id_invalid",
     "Group chat was deactivated",
-    "Need to be inviter of a user to kick it from a basic group",
+    "Need to be inviter of a user to kick it from a basic group nyan~~",
     "Chat_admin_required",
     "Only the creator of a basic group can kick group administrators",
     "Channel_private",
@@ -83,42 +83,42 @@ def gban(update: Update, context: CallbackContext):
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.."
+            "You don't seem to be referring to a user or the ID specified is incorrect nyan~~.."
         )
         return
 
     if int(user_id) in DEV_USERS:
         message.reply_text(
-            "That user is part of the Association\nI can't act against our own."
+            "That user is part of the Association\nI can't act against our own baka."
         )
         return
 
     if int(user_id) in DRAGONS:
         message.reply_text(
-            "I spy, with my little eye... a disaster! Why are you guys turning on each other?"
+            "So you are betraying my master and his people nyan~~"
         )
         return
 
     if int(user_id) in DEMONS:
         message.reply_text(
-            "OOOH someone's trying to gban a Demon Disaster! *grabs popcorn*"
+            "OOOH someone's trying to gban a Demon Disaster! *grabs popcorn* intresting"
         )
         return
 
     if int(user_id) in TIGERS:
-        message.reply_text("That's a Tiger! They cannot be banned!")
+        message.reply_text("That's a Tiger! They cannot be banned nyan~~!")
         return
 
     if int(user_id) in WOLVES:
-        message.reply_text("That's a Wolf! They cannot be banned!")
+        message.reply_text("That's a Wolf! They cannot be banned nyan~~!")
         return
 
     if user_id == bot.id:
-        message.reply_text("You uhh...want me to punch myself?")
+        message.reply_text("You uhh...want me to punch myself nyan~~?")
         return
 
     if user_id in [777000, 1087968824]:
-        message.reply_text("Fool! You can't attack Telegram's native tech!")
+        message.reply_text("Baakaaa! You can't attack Telegram's native tech!")
         return
 
     try:
@@ -162,7 +162,7 @@ def gban(update: Update, context: CallbackContext):
 
         return
 
-    message.reply_text("On it!")
+    message.reply_text("Gbanning this dumb nyan~~")
 
     start_time = time.time()
     datetime_fmt = "%Y-%m-%dT%H:%M"
@@ -263,7 +263,7 @@ def gban(update: Update, context: CallbackContext):
         bot.send_message(
             user_id,
             "#EVENT"
-            "You have been marked as Malicious and as such have been banned from any future groups we manage."
+            "You have been marked as Malicious and as such have been banned from any future groups we manage nyan~~."
             f"\n<b>Reason:</b> <code>{html.escape(user.reason)}</code>"
             f"</b>Appeal Chat:</b> @{SUPPORT_CHAT}",
             parse_mode=ParseMode.HTML,
@@ -298,7 +298,7 @@ def ungban(update: Update, context: CallbackContext):
         message.reply_text("This user is not gbanned!")
         return
 
-    message.reply_text(f"I'll give {user_chat.first_name} a second chance, globally.")
+    message.reply_text(f"I'll give {user_chat.first_name} a second chance, globally nyan~~.")
 
     start_time = time.time()
     datetime_fmt = "%Y-%m-%dT%H:%M"
@@ -392,7 +392,7 @@ def gbanlist(update: Update, context: CallbackContext):
 
     if not banned_users:
         update.effective_message.reply_text(
-            "There aren't any gbanned users! You're kinder than I expected..."
+            "There aren't any gbanned users! You're kinder than I expected nyan~~..."
         )
         return
 
