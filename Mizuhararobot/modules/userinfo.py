@@ -489,7 +489,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == bot.id and sender_id not in DEV_USERS:
             message.reply_text(
-                "Erm... yeah, I only trut my masteror his people to set my bio."
+                "Erm... yeah, I only trust my master or his people to set my bio."
             )
             return
 
